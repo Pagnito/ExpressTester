@@ -14,7 +14,7 @@ app.use(
 		verbose: true
 	})
 );
-app.use(express.static("/tester"));
+app.use(express.static(__dirname + "tester"));
 app.get("*", (req, res) => {
 	res.sendFile(path.resolve(__dirname, "tester", "index.html"));
 });
