@@ -1,0 +1,24 @@
+#input {
+	height: 30px;
+	width: 200px;
+	border: none;
+	background-color: transparent;
+	border-bottom: 1px solid silver;
+	margin-top: 10px;
+	outline: none;
+	color: #929293;
+	font-size: 20px;
+}
+.fa-search {
+	color: white;
+	margin-right: 20px;
+
+	font-size: 25px;
+}
+i {
+	transition: 0.4s all;
+}
+.fa-search:hover {
+	transform: rotate(-30deg);
+	cursor: pointer;
+}

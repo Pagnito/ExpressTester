@@ -8,11 +8,12 @@ const passport = require("passport");
 
 mongoose.connect(keys.mongoURI);
 require("./models/User");
-
+/*
 app.use(express.static(path.join(__dirname, "tester")));
 app.get("*", (req, res) => {
 	res.sendFile(path.resolve(__dirname, "tester", "index.html"));
 });
+*/
 /////////////////auth/////////////
 app.use(
 	cookieSession({
@@ -27,13 +28,14 @@ require("./services/passport");
 
 //////////////////////////////////
 
-/*if (process.env.NODE_ENV === "production") {
-	app.use(express.static("/client/build"));
+if (process.env.NODE_ENV === "production") {
+	app.use(express.static(path.join(__dirname, "client", "build")));
+	app.use(express.static(path.join(__dirname, "client", "build")));
 
 	app.get("*", (req, res) => {
 		res.sendFile(path.resolve(__dirname, "client", "index.html"));
 	});
-}*/
+}
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT);

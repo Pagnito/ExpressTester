@@ -1,0 +1,127 @@
+#header::before {
+	position: absolute;
+	transform-origin: bottom right;
+	transform: skewY(-2deg);
+	width: 100%;
+	height: 170%;
+	background: inherit;
+	top: -70px;
+	content: "";
+}
+.reveal {
+	display: inline-block;
+	position: relative;
+}
+
+#header {
+	background-color: black;
+	width: 100%;
+	height: 140px;
+	display: flex;
+	justify-content: space-between;
+	z-index: 2;
+	position: relative;
+	background-image: url("../assets/club-light.jpg");
+	background-repeat: no-repeat;
+	background-position: bottom left;
+}
+#navBarWrapper {
+	align-self: flex-end;
+	padding-right: 20px;
+	display: flex;
+	flex-direction: column;
+
+	height: 140px;
+	justify-content: space-between;
+	align-items: flex-end;
+	flex: 1;
+}
+#navBtnWrapper {
+	display: flex;
+	align-items: flex-end;
+}
+#authWrapper {
+	display: flex;
+	margin-right: 15px;
+}
+#profileLinks {
+	display: flex;
+	margin-right: 15px;
+	padding-top: 10px;
+	align-items: center;
+}
+.notificationBell {
+	color: white;
+	margin: 0 15px;
+	cursor: pointer;
+	font-size: 25px;
+}
+#userName {
+	color: white;
+	font-family: "Questrial";
+	margin: 0 10px;
+}
+#avatar {
+	border-radius: 30px;
+	border: 2px solid white;
+	cursor: pointer;
+}
+#avatar:hover {
+	box-shadow: 0 0 5px rgb(255, 255, 255), 0 0 15px rgb(255, 255, 255), 0 0 10px rgb(255, 17, 119), 0 0 15px rgb(255, 17, 119),
+		0 0 20px rgb(255, 17, 119);
+}
+.loginBtns {
+	margin: 10px 5px;
+	background-color: transparent;
+	color: white;
+	height: 30px;
+	width: 70px;
+	outline: none;
+	font-size: 13px;
+	cursor: pointer;
+	font-family: "Questrial";
+}
+.loginBtns:hover {
+	color: black;
+	background-color: rgba(255, 255, 255, 1);
+	box-shadow: 0 0 5px rgb(255, 255, 255), 0 0 15px rgb(255, 255, 255), 0 0 10px rgb(255, 17, 119), 0 0 15px rgb(255, 17, 119),
+		0 0 20px rgb(255, 17, 119);
+	border: 1px solid white;
+	border-radius: 3px;
+}
+#navBtns {
+	margin-bottom: 5px;
+}
+
+#logoWrapper {
+	margin-top: 50px;
+	cursor: default;
+	align-self: center;
+	margin-left: 40px;
+	font-size: 70px;
+	font-family: "Monoton";
+	color: white;
+	text-shadow: 0 0 5px rgb(255, 255, 255), 0 0 10px rgb(255, 255, 255), 0 0 15px rgb(255, 255, 255), 0 0 20px rgb(255, 17, 119),
+		0 0 35px rgb(255, 17, 119), 0 0 40px rgb(255, 17, 119);
+}
+
+.navBtn {
+	background-color: transparent;
+	border: none;
+	font-size: 20px;
+	margin-right: 15px;
+	font-size: 20px;
+	color: white;
+	font-family: "Poiret One";
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+}
+.navBtn:focus {
+	outline: none;
+}
+.navBtn:hover {
+	transform: scale(1.1);
+}
+.navBtn:active {
+	color: white;
+}

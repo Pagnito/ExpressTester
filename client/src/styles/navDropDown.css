@@ -1,0 +1,85 @@
+#dropDownNav {
+	width: 100%;
+	min-height: 80vh;
+	position: absolute !important;
+	top: 0px;
+	z-index: 50;
+	background: url("../assets/dropDownBg.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.7);
+	display: grid;
+	grid-template-areas:
+		"a a a a a . . ."
+		". . . . . . . ."
+		". . b b b b . ."
+		". . b b b b . ."
+		". . b b b b . .";
+}
+
+#dropSearchBar {
+	margin-left: 15px;
+}
+#dropInput {
+	height: 30px;
+	width: 200px;
+	border: none;
+	background-color: transparent;
+
+	margin-top: 10px;
+	outline: none;
+	color: #929293;
+	font-size: 20px;
+}
+.fa-search {
+	color: white;
+	margin-right: 20px;
+
+	font-size: 30px;
+}
+i {
+	transition: 0.4s all;
+}
+.fa-search:hover {
+	transform: rotate(-30deg);
+	cursor: pointer;
+}
+#dropBtnWrap {
+	grid-area: b;
+	justify-self: start;
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+	align-items: center;
+}
+#dropProfileLinks {
+	grid-area: a;
+	display: flex;
+	align-items: center;
+	margin: 10px 0 0 25px;
+}
+.dropNavBtn {
+	font-size: 30px;
+	color: white;
+	background-color: transparent;
+	border: none;
+	font-family: "Poiret One";
+	font-weight: bold;
+}
+.dropBell {
+	color: white;
+	margin: 0 15px;
+	cursor: pointer;
+	font-size: 25px;
+}
+#dropUserName {
+	color: white;
+	font-family: "Questrial";
+	margin: 0 10px;
+}
+#dropAvatar {
+	border-radius: 30px;
+	height: 30px;
+	border: 2px solid white;
+	cursor: pointer;
+}
