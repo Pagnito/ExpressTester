@@ -5,15 +5,10 @@ const mongoose = require("mongoose");
 const keys = require("./config/keys");
 const cookieSession = require("cookie-session");
 const passport = require("passport");
-const history = require("connect-history-api-fallback");
+
 mongoose.connect(keys.mongoURI);
 require("./models/User");
 
-app.use(
-	history({
-		verbose: true
-	})
-);
 app.use(express.static(__dirname + "tester"));
 app.get("*", (req, res) => {
 	res.sendFile(path.resolve(__dirname, "tester", "index.html"));
