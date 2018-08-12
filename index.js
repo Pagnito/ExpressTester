@@ -9,7 +9,7 @@ const passport = require("passport");
 mongoose.connect(keys.mongoURI);
 require("./models/User");
 
-app.use(express.static(__dirname + "tester"));
+app.use(express.static(path.join(__dirname, "tester")));
 app.get("*", (req, res) => {
 	res.sendFile(path.resolve(__dirname, "tester", "index.html"));
 });
