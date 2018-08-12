@@ -1,0 +1,452 @@
+@import url(https://fonts.googleapis.com/css?family=Poiret+One|Monoton|Raleway|Questrial);body {
+	margin: 0;
+}
+a {
+	text-decoration: none;
+	color: white;
+}
+#header::before {
+	position: absolute;
+	transform-origin: bottom right;
+	transform: skewY(-2deg);
+	width: 100%;
+	height: 170%;
+	background: inherit;
+	top: -70px;
+	content: "";
+}
+.reveal {
+	display: inline-block;
+	position: relative;
+}
+
+#header {
+	background-color: black;
+	width: 100%;
+	height: 140px;
+	display: flex;
+	justify-content: space-between;
+	z-index: 2;
+	position: relative;
+	background-image: url(/build1eb7a89386c6374294a6217faa6e8447.jpg);
+	background-repeat: no-repeat;
+	background-position: bottom left;
+}
+#navBarWrapper {
+	align-self: flex-end;
+	padding-right: 20px;
+	display: flex;
+	flex-direction: column;
+
+	height: 140px;
+	justify-content: space-between;
+	align-items: flex-end;
+	flex: 1;
+}
+#navBtnWrapper {
+	display: flex;
+	align-items: flex-end;
+}
+#authWrapper {
+	display: flex;
+	margin-right: 15px;
+}
+#profileLinks {
+	display: flex;
+	margin-right: 15px;
+	padding-top: 10px;
+	align-items: center;
+}
+.notificationBell {
+	color: white;
+	margin: 0 15px;
+	cursor: pointer;
+	font-size: 25px;
+}
+#userName {
+	color: white;
+	font-family: "Questrial";
+	margin: 0 10px;
+}
+#avatar {
+	border-radius: 30px;
+	border: 2px solid white;
+	cursor: pointer;
+}
+#avatar:hover {
+	box-shadow: 0 0 5px rgb(255, 255, 255), 0 0 15px rgb(255, 255, 255), 0 0 10px rgb(255, 17, 119), 0 0 15px rgb(255, 17, 119),
+		0 0 20px rgb(255, 17, 119);
+}
+.loginBtns {
+	margin: 10px 5px;
+	background-color: transparent;
+	color: white;
+	height: 30px;
+	width: 70px;
+	outline: none;
+	font-size: 13px;
+	cursor: pointer;
+	font-family: "Questrial";
+}
+.loginBtns:hover {
+	color: black;
+	background-color: rgba(255, 255, 255, 1);
+	box-shadow: 0 0 5px rgb(255, 255, 255), 0 0 15px rgb(255, 255, 255), 0 0 10px rgb(255, 17, 119), 0 0 15px rgb(255, 17, 119),
+		0 0 20px rgb(255, 17, 119);
+	border: 1px solid white;
+	border-radius: 3px;
+}
+#navBtns {
+	margin-bottom: 5px;
+}
+
+#logoWrapper {
+	margin-top: 50px;
+	cursor: default;
+	align-self: center;
+	margin-left: 40px;
+	font-size: 70px;
+	font-family: "Monoton";
+	color: white;
+	text-shadow: 0 0 5px rgb(255, 255, 255), 0 0 10px rgb(255, 255, 255), 0 0 15px rgb(255, 255, 255), 0 0 20px rgb(255, 17, 119),
+		0 0 35px rgb(255, 17, 119), 0 0 40px rgb(255, 17, 119);
+}
+
+.navBtn {
+	background-color: transparent;
+	border: none;
+	font-size: 20px;
+	margin-right: 15px;
+	font-size: 20px;
+	color: white;
+	font-family: "Poiret One";
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+}
+.navBtn:focus {
+	outline: none;
+}
+.navBtn:hover {
+	transform: scale(1.1);
+}
+.navBtn:active {
+	color: white;
+}
+#input {
+	height: 30px;
+	width: 200px;
+	border: none;
+	background-color: transparent;
+	border-bottom: 1px solid silver;
+	margin-top: 10px;
+	outline: none;
+	color: #929293;
+	font-size: 20px;
+}
+.fa-search {
+	color: white;
+	margin-right: 20px;
+
+	font-size: 25px;
+}
+i {
+	transition: 0.4s all;
+}
+.fa-search:hover {
+	transform: rotate(-30deg);
+	cursor: pointer;
+}
+#dropDownNav {
+	width: 100%;
+	min-height: 80vh;
+	position: absolute !important;
+	top: 0px;
+	z-index: 50;
+	background: url(/build21d04a4266991ee51f440a901d35bc1c.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.7);
+	display: grid;
+	grid-template-areas:
+		"a a a a a . . ."
+		". . . . . . . ."
+		". . b b b b . ."
+		". . b b b b . ."
+		". . b b b b . .";
+}
+
+#dropSearchBar {
+	margin-left: 15px;
+}
+#dropInput {
+	height: 30px;
+	width: 200px;
+	border: none;
+	background-color: transparent;
+
+	margin-top: 10px;
+	outline: none;
+	color: #929293;
+	font-size: 20px;
+}
+.fa-search {
+	color: white;
+	margin-right: 20px;
+
+	font-size: 30px;
+}
+i {
+	transition: 0.4s all;
+}
+.fa-search:hover {
+	transform: rotate(-30deg);
+	cursor: pointer;
+}
+#dropBtnWrap {
+	grid-area: b;
+	justify-self: start;
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+	align-items: center;
+}
+#dropProfileLinks {
+	grid-area: a;
+	display: flex;
+	align-items: center;
+	margin: 10px 0 0 25px;
+}
+.dropNavBtn {
+	font-size: 30px;
+	color: white;
+	background-color: transparent;
+	border: none;
+	font-family: "Poiret One";
+	font-weight: bold;
+}
+.dropBell {
+	color: white;
+	margin: 0 15px;
+	cursor: pointer;
+	font-size: 25px;
+}
+#dropUserName {
+	color: white;
+	font-family: "Questrial";
+	margin: 0 10px;
+}
+#dropAvatar {
+	border-radius: 30px;
+	height: 30px;
+	border: 2px solid white;
+	cursor: pointer;
+}
+#lodaingContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	background: url(/build4c9249c3e90585ebd92b705042f79d78.jpg);
+	box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.8);
+}
+#profileContainer {
+	display: flex;
+
+	justify-content: center;
+	min-height: 100vh;
+	background: url(/build4c9249c3e90585ebd92b705042f79d78.jpg);
+	box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.8);
+}
+#profileSheet {
+	border: 1px solid white;
+	margin-top: 100px;
+	width: 80%;
+	margin-bottom: 100px;
+	/*background-color: rgba(255, 255, 255, 0.7);*/
+}
+.spinner {
+	margin-top: -180px;
+	width: 80px;
+	height: 60px;
+	text-align: center;
+	font-size: 10px;
+}
+
+.spinner > div {
+	margin: 0 2px 0 2px;
+	background-color: rgba(255, 255, 255, 0.6);
+	height: 100%;
+	width: 10px;
+	display: inline-block;
+
+	-webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+	animation: sk-stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner .rect2 {
+	-webkit-animation-delay: -1.1s;
+	animation-delay: -1.1s;
+}
+
+.spinner .rect3 {
+	-webkit-animation-delay: -1s;
+	animation-delay: -1s;
+}
+
+.spinner .rect4 {
+	-webkit-animation-delay: -0.9s;
+	animation-delay: -0.9s;
+}
+
+.spinner .rect5 {
+	-webkit-animation-delay: -0.8s;
+	animation-delay: -0.8s;
+}
+
+@-webkit-keyframes sk-stretchdelay {
+	0%,
+	40%,
+	100% {
+		-webkit-transform: scaleY(0.4);
+	}
+	20% {
+		-webkit-transform: scaleY(1);
+	}
+}
+
+@keyframes sk-stretchdelay {
+	0%,
+	40%,
+	100% {
+		transform: scaleY(0.4);
+		-webkit-transform: scaleY(0.4);
+	}
+	20% {
+		transform: scaleY(1);
+		-webkit-transform: scaleY(1);
+	}
+}
+#articlesBody {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	background-image: url(/build4c9249c3e90585ebd92b705042f79d78.jpg);
+	box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.7);
+	align-items: center;
+	grid-template-columns: repeat(13, 1fr);
+	grid-template-rows: repeat(13, auto);
+}
+
+#articlesBody > ul > li {
+	list-style-type: none !important;
+}
+img {
+	max-width: 100%;
+}
+.titleWrap {
+	width: 80%;
+}
+#loginBoxWrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: -200px;
+	flex-direction: column;
+	width: 40%;
+}
+#form {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: white;
+	font-family: "Questrial";
+}
+.loginInput {
+	height: 25px;
+	width: 100%;
+	font-size: 20px;
+}
+.loginFormBtnsWrap {
+	margin: 10px 0;
+	width: 101%;
+	display: flex;
+	justify-content: center;
+}
+.loginFormBtns {
+	width: 100%;
+	height: 30px;
+}
+.loginFormLabels {
+	margin: 10px 0;
+}
+#googleLoginBtn {
+}
+#googleAuthLink {
+	width: 101%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 101%;
+	height: 30px;
+	background-color: #d13640;
+	border: 1px solid white;
+}
+#loginPageWrapper {
+	background: url(/build4c9249c3e90585ebd92b705042f79d78.jpg);
+	box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.8);
+	min-height: 100vh;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#artContainer {
+	width: 100%;
+	background: black;
+}
+#article {
+	min-height: 100vh;
+	background: #fcfcf9;
+	display: grid;
+	grid-template-columns: repeat(8, 1fr);
+	grid-auto-rows: 1fr 1fr 1fr 1fr;
+}
+#artTitle {
+	font-size: 40px;
+	padding-top: 40px;
+	text-align: center;
+
+	grid-column: 1/9;
+	grid-row: 1/2;
+}
+#artBody {
+	grid-column: 2/8;
+	grid-row: 2/5;
+}
+#postPic {
+	display: block;
+	margin: 0 auto;
+	max-width: 100%;
+}
+
+#imgHolder {
+	overflow: hidden;
+	max-height: 120vh;
+	display: flex;
+	align-items: center;
+}
+/*#faderBullshit:after {
+	display: block;
+	position: relative;
+	background-image: linear-gradient(
+		to bottom,
+		rgba(0, 0, 0, 0) 0,
+		#151921 100%
+	);
+	margin-top: -300px;
+	height: 300px;
+	width: 100%;
+	content: "";
+}*/
