@@ -26,17 +26,8 @@ module.exports = {
 				})
 			},
 			{
-				test: /\.(png|jpg)$/,
-				use: [
-					"file-loader",
-					{
-						loader: "image-webpack-loader",
-						options: {
-							bypassOnDebug: true,
-							disable: true
-						}
-					}
-				]
+				test: /\.(png|jpe?g)$/,
+				use: "file-loader"
 			}
 
 			/*{
