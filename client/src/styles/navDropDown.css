@@ -9,8 +9,9 @@
 	background-repeat: no-repeat;
 	box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.7);
 	display: grid;
+	grid-template-columns: repeat(8, 1fr);
 	grid-template-areas:
-		"a a a a a . . ."
+		"a . c c c c . ."
 		". . . . . . . ."
 		". . b b b b . ."
 		". . b b b b . ."
@@ -18,17 +19,21 @@
 }
 
 #dropSearchBar {
-	margin-left: 15px;
+	grid-area: c;
+	align-self: center;
+	margin-top: 5px;
+	grid-column: 3/8;
 }
 #dropInput {
 	height: 30px;
-	width: 200px;
+	width: 70%;
+
 	border: none;
 	background-color: transparent;
-
+	border-bottom: 1px solid white;
 	margin-top: 10px;
 	outline: none;
-	color: #929293;
+	color: white;
 	font-size: 20px;
 }
 .fa-search {
@@ -46,7 +51,7 @@ i {
 }
 #dropBtnWrap {
 	grid-area: b;
-	justify-self: start;
+	justify-self: center;
 	display: flex;
 	justify-content: space-around;
 	flex-direction: column;

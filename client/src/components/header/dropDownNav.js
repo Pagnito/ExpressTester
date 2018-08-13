@@ -6,6 +6,23 @@ import SearchBar from "./search-bar";
 import "../../styles/navDropDown.css";
 class DropDownNav extends Component {
 	render() {
+		if (!this.props.user) {
+			return (
+				<div id="dropDownNav">
+					<div id="dropBtnWrap">
+						<button className="dropNavBtn">
+							<Link to="/">Home</Link>
+						</button>
+						<button className="dropNavBtn">
+							<Link to="/login">Login</Link>
+						</button>
+						<button className="dropNavBtn">
+							<Link to="/">Sign Up</Link>
+						</button>
+					</div>
+				</div>
+			);
+		}
 		return (
 			<div id="dropDownNav">
 				<div id="dropBtnWrap">
@@ -23,12 +40,10 @@ class DropDownNav extends Component {
 					<img id="dropAvatar" src={this.props.user.image.url} />
 
 					<i className="far fa-bell white dropBell" />
-					<div id="dropSearchBar">
-						<form id="dropInputIn">
-							<i className="fas sIcon fa-search" />
-							<input id="dropInput" />
-						</form>
-					</div>
+				</div>
+				<div id="dropSearchBar">
+					<i className="fas sIcon fa-search" />
+					<input id="dropInput" />
 				</div>
 			</div>
 		);

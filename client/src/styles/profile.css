@@ -14,12 +14,114 @@
 	background: url("../assets/codeBackground.jpg");
 	box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.8);
 }
+#profileInfo {
+	display: flex;
+
+	flex-wrap: wrap;
+}
+#proImg {
+	max-height: 250px;
+	max-width: 250px;
+	border-radius: 250px;
+	margin-top: 35px;
+}
+#imgWrap {
+	display: flex;
+	justify-content: center;
+	width: 40%;
+}
+#usrName {
+	font-size: 60px;
+	font-family: "poiret one";
+	margin: 40px 40px;
+}
+.usrFields {
+	font-family: "poiret one";
+	font-size: 20px;
+	border-bottom: 1px solid white;
+	padding: 5px;
+}
+.fieldWrapper {
+	display: flex;
+}
+.fa-pen {
+	font-size: 40px;
+	margin-top: 55px;
+	cursor: pointer;
+}
 #profileSheet {
 	border: 1px solid white;
 	margin-top: 100px;
 	width: 80%;
 	margin-bottom: 100px;
+	display: flex;
+	flex-direction: column;
+
+	color: white;
 	/*background-color: rgba(255, 255, 255, 0.7);*/
+}
+#thisUserArticles {
+	border: 1px solid white;
+	width: 90%;
+	height: auto;
+	align-self: center;
+	margin-top: 25px;
+	margin-bottom: 50px;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+#addArticle {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 50px;
+	color: white;
+	margin-top: 30px;
+	margin-bottom: 25px;
+	cursor: pointer;
+}
+form {
+	display: flex;
+	flex-direction: column;
+	margin-top: 20px;
+	display: none;
+}
+.visible {
+	display: flex;
+}
+.invisible {
+	display: none;
+}
+#submArticle {
+	width: 20%;
+	min-width: 100px;
+	height: 40px;
+	border: white 1px solid;
+	font-size: 25px;
+	background-color: transparent;
+	color: white;
+	margin-top: 200px;
+	margin-right: 50px;
+	margin-bottom: 50px;
+	float: right;
+}
+#artTitle {
+	height: 40px;
+	font-size: 30px;
+	background-color: transparent;
+	font-family: "questrial";
+	border: none;
+	outline: none;
+	color: white;
+}
+#story {
+	height: auto;
+	background-color: transparent;
+	font-size: 20px;
+	font-family: "questrial";
+	border: none;
+	outline: none;
+	padding: 30px;
+	color: white;
 }
 .spinner {
 	margin-top: -180px;
@@ -81,5 +183,21 @@
 	20% {
 		transform: scaleY(1);
 		-webkit-transform: scaleY(1);
+	}
+}
+@media (max-width: 1000px) {
+	#imgWrap {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+	}
+	#profileInfo {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+	#profileSheet {
+		width: 100%;
+		border: none;
 	}
 }

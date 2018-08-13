@@ -48,6 +48,17 @@ class Header extends Component {
 				);
 			}
 		} else {
+			if (window.outerWidth < 1000) {
+				return (
+					<div id="header">
+						<span id="logoWrapper" className="reveal">
+							<div>
+								<p>noMaze</p>
+							</div>
+						</span>
+					</div>
+				);
+			}
 			return (
 				<div id="header">
 					<span id="logoWrapper" className="reveal">
@@ -78,12 +89,12 @@ class Header extends Component {
 			);
 		}
 	}
+
 	render() {
 		return <div>{this.renderLoggedIn()}</div>;
 	}
 }
 function mapStateToProps(state) {
-	console.log(state);
 	return {
 		user: state.users
 	};
