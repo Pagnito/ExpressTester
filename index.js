@@ -9,12 +9,12 @@ const bodyParser = require("body-parser");
 mongoose.connect(keys.mongoURI);
 require("./models/User");
 require("./models/Article");
-
+/*
 app.use(express.static(path.join(__dirname, "tester")));
 app.get("*", (req, res) => {
 	res.sendFile(path.resolve(__dirname, "tester", "index.html"));
 });
-
+*/
 /////////////////auth/////////////
 app.use(bodyParser.json());
 
@@ -31,7 +31,7 @@ require("./routes/article-routes")(app);
 require("./services/passport");
 
 //////////////////////////////////
-/*
+
 if (process.env.NODE_ENV === "production") {
 	app.use(express.static(path.resolve(__dirname, "client", "build")));
 
@@ -39,6 +39,6 @@ if (process.env.NODE_ENV === "production") {
 		res.sendFile(path.resolve(__dirname, "client", "index.html"));
 	});
 }
-*/
+
 const PORT = process.env.PORT || 4000;
 app.listen(PORT);
