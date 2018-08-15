@@ -15,10 +15,6 @@ class Profile extends Component {
 	componentWillMount() {
 		this.props.fetchUserArticles();
 	}
-	componentWillUnount() {
-		this.props.fetchUserArticles();
-		this.setState({ slide: "slideOut" });
-	}
 
 	submitted() {
 		document.getElementById("artForm").classList.remove("visible");
@@ -44,11 +40,6 @@ class Profile extends Component {
 				</div>
 			);
 		});
-	}
-	renderProfile() {
-		if (this.props.userArticles) {
-			console.log(this.props.userArticles[0]);
-		}
 	}
 
 	render() {
@@ -97,7 +88,6 @@ class Profile extends Component {
 	}
 }
 function mapStateToProps(state) {
-	console.log(state);
 	return {
 		user: state.users,
 		userArticles: state.userArticles.items

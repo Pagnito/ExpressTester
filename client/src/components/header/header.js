@@ -6,6 +6,32 @@ import SearchBar from "./search-bar";
 import DropDownNav from "./dropDownNav";
 
 class Header extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			headerHeight: "140px",
+			logoSize: "70px"
+		};
+		this.resize();
+	}
+	resize = () => {
+		window.addEventListener("scroll", () => {
+			console.log(window.pageYOffset);
+			if (window.pageYOffset > 150) {
+				this.setState({ headerHeight: "80px" });
+				this.setState({ logoSize: "50px" });
+				this.setState({ proLinksMarginTop: "80px" });
+				this.setState({ navBtnsMarginRight: "180px" });
+				this.setState({ settingsMarginTop: "145px" });
+			} else {
+				this.setState({ headerHeight: "140px" });
+				this.setState({ logoSize: "70px" });
+				this.setState({ proLinksMarginTop: "10px" });
+				this.setState({ navBtnsMarginRight: "0px" });
+				this.setState({ settingsMarginTop: "80px" });
+			}
+		});
+	};
 	renderProSettings = () => {
 		var proSet = document.getElementById("profileSettings");
 		var lilTriangle = document.getElementById("lilTriangle");
@@ -25,8 +51,8 @@ class Header extends Component {
 		if (this.props.user) {
 			if (window.outerWidth < 1000) {
 				return (
-					<div id="header">
-						<span id="logoWrapper" className="reveal">
+					<div style={{ height: `${this.state.headerHeight}` }} id="header">
+						<span style={{ fontSize: `${this.state.logoSize}` }} id="logoWrapper" className="reveal">
 							<div>
 								<p>noMaze</p>
 							</div>
@@ -35,18 +61,18 @@ class Header extends Component {
 				);
 			} else {
 				return (
-					<div id="header">
-						<span id="logoWrapper" className="reveal">
+					<div style={{ height: `${this.state.headerHeight}` }} id="header">
+						<span style={{ fontSize: `${this.state.logoSize}` }} id="logoWrapper" className="reveal">
 							<div>
 								<p>noMaze</p>
 							</div>
 						</span>
 						<span id="navBarWrapper" className="reveal">
-							<div id="profileLinks">
+							<div style={{ paddingTop: `${this.state.proLinksMarginTop}` }} id="profileLinks">
 								<p id="userName">{this.props.user.userName}</p>
 								<i className="far fa-bell white notificationBell" />
 								<img onClick={this.renderProSettings} id="avatar" src={this.props.user.image.url} />
-								<div onClick={this.renderProSettings} id="profileSettings">
+								<div style={{ top: `${this.state.settingsMarginTop}` }} onClick={this.renderProSettings} id="profileSettings">
 									<div id="lilTriangle" />
 									<div className="setting">Profile</div>
 									<div className="setting">Settings</div>
@@ -56,7 +82,7 @@ class Header extends Component {
 									</a>
 								</div>
 							</div>
-							<div id="navBtnWrapper">
+							<div style={{ marginRight: `${this.state.navBtnsMarginRight}` }} id="navBtnWrapper">
 								<SearchBar />
 								<div id="navBtns">
 									<button className="navBtn">
@@ -77,8 +103,8 @@ class Header extends Component {
 		} else {
 			if (window.outerWidth < 1000) {
 				return (
-					<div id="header">
-						<span id="logoWrapper" className="reveal">
+					<div style={{ height: `${this.state.headerHeight}` }} id="header">
+						<span style={{ fontSize: `${this.state.logoSize}` }} id="logoWrapper" className="reveal">
 							<div>
 								<p>noMaze</p>
 							</div>
@@ -87,8 +113,8 @@ class Header extends Component {
 				);
 			}
 			return (
-				<div id="header">
-					<span id="logoWrapper" className="reveal">
+				<div style={{ height: `${this.state.headerHeight}` }} id="header">
+					<span style={{ fontSize: `${this.state.logoSize}` }} id="logoWrapper" className="reveal">
 						<div>
 							<p>noMaze</p>
 						</div>

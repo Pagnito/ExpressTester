@@ -17,7 +17,7 @@ class DropDownNav extends Component {
 	render() {
 		if (!this.props.user) {
 			return (
-				<div id="dropDownNav">
+				<div className={this.state.dropDownAnimate} id="dropDownNav">
 					<div id="dropBtnWrap">
 						<button className="dropNavBtn">
 							<Link to="/">Home</Link>
@@ -33,7 +33,7 @@ class DropDownNav extends Component {
 			);
 		}
 		return (
-			<div id="dropDownNav">
+			<div className={this.state.dropDownAnimate} id="dropDownNav">
 				<div id="dropBtnWrap">
 					<button className="dropNavBtn">
 						<Link to="/">Home</Link>

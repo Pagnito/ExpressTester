@@ -7,7 +7,7 @@ class DropDownLink extends Component {
 				<i
 					style={{
 						zIndex: "100",
-						position: "absolute",
+						position: "fixed",
 						color: "white",
 						fontSize: "45px",
 						right: "25px",

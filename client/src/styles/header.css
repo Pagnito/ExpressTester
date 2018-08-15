@@ -1,13 +1,3 @@
-#header::before {
-	position: absolute;
-	transform-origin: bottom right;
-	transform: skewY(-2deg);
-	width: 100%;
-	height: 170%;
-	background: inherit;
-	top: -70px;
-	content: "";
-}
 .reveal {
 	display: inline-block;
 	position: relative;
@@ -27,7 +17,7 @@
 	background-color: white;
 	position: absolute;
 	right: 20px;
-	top: 72px;
+	top: 80px;
 	border-radius: 5px;
 	display: flex;
 	font-size: 25px;
@@ -72,11 +62,12 @@
 #header {
 	background-color: black;
 	width: 100%;
-	height: 140px;
+	height: 180px;
 	display: flex;
+	border: black 1px solid;
 	justify-content: space-between;
 	z-index: 2;
-	position: relative;
+	position: fixed;
 	background-image: url("../assets/club-light.jpg");
 	background-repeat: no-repeat;
 	background-position: bottom left;
@@ -90,11 +81,11 @@
 	height: 140px;
 	justify-content: space-between;
 	align-items: flex-end;
-	flex: 1;
 }
 #navBtnWrapper {
 	display: flex;
 	align-items: flex-end;
+	margin-bottom: 8px;
 }
 #authWrapper {
 	display: flex;
@@ -150,7 +141,6 @@
 }
 
 #logoWrapper {
-	margin-top: 50px;
 	cursor: default;
 	align-self: center;
 	margin-left: 40px;
