@@ -3,7 +3,8 @@ import "../styles/articles-body.css";
 import _ from "lodash";
 import { connect } from "react-redux";
 import { fetchPosts } from "../actions/actions";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
+
 class ArticlesBody extends Component {
 	constructor(props) {
 		super(props);

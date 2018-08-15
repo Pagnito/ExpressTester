@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 
-class Profile extends Component {
+class About extends Component {
 	render() {
 		return (
 			<div>
-				<div>Profile</div>
+				<div>About</div>
 			</div>
 		);
 	}
 }
-export default Profile;
+export default About;

@@ -1,6 +1,6 @@
 #dropDownNav {
 	width: 100%;
-	min-height: 80vh;
+	height: 80vh;
 	position: absolute !important;
 	top: 0px;
 	z-index: 50;
@@ -17,7 +17,28 @@
 		". . b b b b . ."
 		". . b b b b . .";
 }
-
+.animeDropDown {
+	animation: slideDown 0.4s ease-out forwards;
+}
+@keyframes slideDown {
+	0% {
+		transform: translateY(-100%);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+.animeDropUp {
+	animation: slideUp 0.4s ease-out forwards;
+}
+@keyframes slideUp {
+	0% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(-100%);
+	}
+}
 #dropSearchBar {
 	grid-area: c;
 	align-self: center;

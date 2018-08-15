@@ -3,7 +3,7 @@
 	flex-direction: column;
 	min-height: 100vh;
 	background-image: url("../assets/codeBackground.jpg");
-	box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.7);
+	box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.8);
 	align-items: center;
 	grid-template-columns: repeat(13, 1fr);
 	grid-template-rows: repeat(13, auto);

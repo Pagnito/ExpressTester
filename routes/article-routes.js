@@ -17,10 +17,15 @@ module.exports = (app) => {
 			.catch((err) => {
 				res.status(400).send("unable to save to database");
 			});
-		/*const article = new Article({
+	});
+	app.get("/api/userArticles", requireLogin, async (req, res) => {
+		const userArticles = await Article.find({ userId: req.user.id });
+
+		res.send(userArticles);
+	});
+	/*const article = new Article({
 			title: title,
 			userId: req.user.id,
 			body: body
 		});*/
-	});
 };

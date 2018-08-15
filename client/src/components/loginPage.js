@@ -5,7 +5,7 @@ class LoginPage extends Component {
 		return (
 			<div id="loginPageWrapper">
 				<div id="loginBoxWrapper">
-					<form id="form">
+					<div id="form">
 						<label className="loginFormLabels">User Name</label>
 						<input className="loginInput" />
 						<label className="loginFormLabels">Password</label>
@@ -19,7 +19,7 @@ class LoginPage extends Component {
 						<a id="googleAuthLink" href="/login/auth/google">
 							Login With Google
 						</a>
-					</form>
+					</div>
 				</div>
 			</div>
 		);

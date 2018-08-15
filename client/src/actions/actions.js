@@ -63,3 +63,18 @@ export function postArticle(formVals, history) {
 			});
 	};
 }
+export function fetchUserArticles() {
+	return function(dispatch) {
+		axios
+			.get("/api/userArticles")
+			.then((response) => {
+				dispatch({
+					type: FETCH_ARTICLES,
+					payload: response.data
+				});
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	};
+}

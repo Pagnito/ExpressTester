@@ -2,54 +2,53 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import NewArticle from "./newArticle";
-
+import * as actions from "../actions/actions";
 import "../styles/profile.css";
 
 class Profile extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			userName: "",
-			email: "",
-			biggerImg: ""
+			slide: "slide"
 		};
 	}
+	componentWillMount() {
+		this.props.fetchUserArticles();
+	}
+	componentWillUnount() {
+		this.props.fetchUserArticles();
+		this.setState({ slide: "slideOut" });
+	}
+
 	submitted() {
 		document.getElementById("artForm").classList.remove("visible");
-		document.getElementById("artForm").classList.add("invisible");
+		document.getElementById("artForm").classList.add("slideUp");
 	}
-	renderProfile() {
-		const img = this.props.user.image.url;
-		const image = img.substring(img.length - 2, 0) + 350;
-		function showArticleForm() {
-			document.getElementById("artForm").classList.remove("invisible");
-			document.getElementById("artForm").classList.add("visible");
-		}
 
-		return (
-			<div id="profileContainer">
-				<div id="profileSheet">
-					<div id="profileInfo">
-						<div id="imgWrap">
-							<img id="proImg" src={image} />
-						</div>
-						<div id="profileEdits">
-							<div className="fieldWrapper">
-								<i className="fas fa-pen" />
-								<p id="usrName">{this.props.user.userName}</p>
+	renderArticles() {
+		return this.props.userArticles.map((article, ind) => {
+			return (
+				<div key={ind} id="thisUserArticle">
+					<div id="artImage" style={{ backgroundColor: "gold" }} />
+					<div id="artContent">
+						<div id="articleTitle">{article.title}</div>
+						<div id="artPreview">{article.story}</div>
+						<div id="artInfo">
+							<div id="userArtThumbs">
+								<i className="fas woo fa-thumbs-up" />
+								<i className="fas woo fa-thumbs-down" />
 							</div>
-							<div className="fieldWrapper">
-								<p className="usrFields">{this.props.user.email[0].value}</p>
-							</div>
+							<div>date</div>
 						</div>
-					</div>
-					<div id="thisUserArticles">
-						<i onClick={showArticleForm} id="addArticle" className="fas fa-plus-circle" />
-						<NewArticle hideForm={this.submitted} />
 					</div>
 				</div>
-			</div>
-		);
+			);
+		});
+	}
+	renderProfile() {
+		if (this.props.userArticles) {
+			console.log(this.props.userArticles[0]);
+		}
 	}
 
 	render() {
@@ -66,12 +65,45 @@ class Profile extends Component {
 				</div>
 			);
 		}
-		return <div>{this.renderProfile()}</div>;
+		if (this.props.user && this.props.userArticles) {
+			const img = this.props.user.image.url;
+			const image = img.substring(img.length - 2, 0) + 350;
+
+			return (
+				<div id="profileContainer">
+					<div id="profileSheet" className={this.state.slide}>
+						<div id="profileInfo">
+							<div id="imgWrap">
+								<img id="proImg" src={image} />
+							</div>
+							<div id="profileEdits">
+								<div className="fieldWrapper">
+									<i className="fas fa-pen" />
+									<p id="usrName">{this.props.user.userName}</p>
+								</div>
+								<div className="fieldWrapper">
+									<p className="usrFields">{this.props.user.email[0].value}</p>
+								</div>
+							</div>
+						</div>
+						<div id="newArticleWrapper">
+							<NewArticle hideForm={this.submitted} />
+						</div>
+						{this.renderArticles()}
+					</div>
+				</div>
+			);
+		}
 	}
 }
 function mapStateToProps(state) {
+	console.log(state);
 	return {
-		user: state.users
+		user: state.users,
+		userArticles: state.userArticles.items
 	};
 }
-export default connect(mapStateToProps)(Profile);
+export default connect(
+	mapStateToProps,
+	actions
+)(Profile);

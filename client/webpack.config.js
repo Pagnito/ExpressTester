@@ -4,8 +4,8 @@ const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 module.exports = {
 	entry: "./src/index.js",
 	output: {
-		path: path.resolve(__dirname),
-		publicPath: "/",
+		path: path.resolve(__dirname, "build"),
+		publicPath: "/build",
 		filename: "bundle.js"
 	},
 
@@ -39,10 +39,6 @@ module.exports = {
 	plugins: [
 		new ExtractTextPlugin({
 			filename: "bundle.css"
-		}),
-		new UglifyJsPlugin({
-			test: /\.js$/,
-			exclude: /node_modules/
 		})
 	],
 	devServer: {

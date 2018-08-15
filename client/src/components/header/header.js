@@ -4,7 +4,23 @@ import "../../styles/header.css";
 import { Link } from "react-router-dom";
 import SearchBar from "./search-bar";
 import DropDownNav from "./dropDownNav";
+
 class Header extends Component {
+	renderProSettings = () => {
+		var proSet = document.getElementById("profileSettings");
+		var lilTriangle = document.getElementById("lilTriangle");
+		if (proSet.classList == "revealProSettings") {
+			proSet.classList.remove("revealproSettings");
+			proSet.classList.add("hideProSettings");
+			lilTriangle.classList.remove("revealTriangle");
+			lilTriangle.classList.add("hideTriangle");
+		} else {
+			proSet.classList.remove("hideProSettings");
+			proSet.classList.add("revealProSettings");
+			lilTriangle.classList.remove("hideTriangle");
+			lilTriangle.classList.add("revealTriangle");
+		}
+	};
 	renderLoggedIn() {
 		if (this.props.user) {
 			if (window.outerWidth < 1000) {
@@ -29,7 +45,16 @@ class Header extends Component {
 							<div id="profileLinks">
 								<p id="userName">{this.props.user.userName}</p>
 								<i className="far fa-bell white notificationBell" />
-								<img id="avatar" src={this.props.user.image.url} />
+								<img onClick={this.renderProSettings} id="avatar" src={this.props.user.image.url} />
+								<div onClick={this.renderProSettings} id="profileSettings">
+									<div id="lilTriangle" />
+									<div className="setting">Profile</div>
+									<div className="setting">Settings</div>
+
+									<a href="/api/logout">
+										<div className="setting">Log Out</div>
+									</a>
+								</div>
 							</div>
 							<div id="navBtnWrapper">
 								<SearchBar />
@@ -40,7 +65,9 @@ class Header extends Component {
 									<button className="navBtn">
 										<Link to="/profile">Profile</Link>
 									</button>
-									<button className="navBtn">About</button>
+									<button className="navBtn">
+										<Link to="/about">About</Link>
+									</button>
 								</div>
 							</div>
 						</span>

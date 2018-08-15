@@ -1,7 +1,8 @@
 import "../styles/styles.css";
 import React, { Component } from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { connect } from "react-redux";
+import { TransitionGroup, CSSTransition } from "react-transition-group-v2";
 import * as actions from "../actions/actions";
 import Header from "./header/header";
 import Profile from "./profile";
@@ -10,6 +11,7 @@ import LoginPage from "./loginPage";
 import Article from "./article";
 import DropDownNav from "./header/dropDownNav";
 import DropDownLink from "./header/dropDownLink";
+import About from "./about";
 class App extends Component {
 	constructor(props) {
 		super(props);
@@ -54,10 +56,11 @@ class App extends Component {
 							{this.renderDropLink()}
 							{this.isItMobile()}
 							<Header props={this.state.rerenderHeader} />
-							<Route exact path="/profile" component={Profile} />
-							<Route exact path="/login" component={LoginPage} />
-							<Route exact path="/post/:id" component={Article} />
+
 							<Route exact path="/" component={ArticlesBody} />
+							<Route exact path="/login" component={LoginPage} />
+							<Route exact path="/profile" component={Profile} />
+							<Route exact path="/post/:id" component={Article} />
 						</div>
 					</BrowserRouter>
 				</div>
@@ -70,7 +73,9 @@ class App extends Component {
 						{this.renderDropLink()}
 						{this.isItMobile()}
 						<Header />
+
 						<Route exact path="/profile" component={Profile} />
+						<Route exact path="/about" component={About} />
 						<Route exact path="/login" component={LoginPage} />
 						<Route exact path="/post/:id" component={Article} />
 						<Route exact path="/" component={ArticlesBody} />

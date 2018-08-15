@@ -5,6 +5,15 @@ import { Link } from "react-router-dom";
 import SearchBar from "./search-bar";
 import "../../styles/navDropDown.css";
 class DropDownNav extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			dropDownAnimate: "animeDropDown"
+		};
+	}
+	slideUpNav = () => {
+		this.setState({ dropDownAnimate: "animeDropUp" });
+	};
 	render() {
 		if (!this.props.user) {
 			return (
